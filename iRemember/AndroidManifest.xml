@@ -50,13 +50,18 @@
         </activity>
         
         <!-- THIS IS THE SOUND RECORD ACTIVITY -->
+        <!-- I'm adding a requirement for the RECORD_AUDIO permission to any other app
+		     that wants to use this activity.  I would also like to add WRITE_EXTERNAL_STORAGE
+	         to the permission requirements, but it seems I can have at most one. -->
         <activity
             android:name="edu.vuum.mocca.ui.SoundRecordActivity"
-            android:label="@string/title_activity_sound_record">
+            android:label="@string/title_activity_sound_record"
+	    	android:permission="android.permission.RECORD_AUDIO"
+	    	>
             <intent-filter> 										<!-- Line 56 -->
                 <action android:name="android.intent.action.TIMEZONE_CHANGED" />
             </intent-filter>
-        </activity>
+    	</activity>
         
     </application>
 
